@@ -1,0 +1,26 @@
+let
+  /* Read a positive integer from the standard input.
+     Returns -1 on error */
+  var result := 0
+  var char := ""
+  var code := 0
+  function read_unsigned() : int =
+    (char := getchar();
+    code := ord(char);
+    if code < 48 | code > 57 then
+      -1
+    else
+      (while code > 47 & code < 58 do
+        (result := result * 10 + code - 48;
+          char := getchar();
+          code := ord(char));
+      if code = 10 then
+        result
+      else 
+        -1)
+    )
+  var a : int := read_unsigned()
+in
+  print_int(a);
+  print("\n")
+end
