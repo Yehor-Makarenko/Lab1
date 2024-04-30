@@ -1,0 +1,17 @@
+let
+  function fibonacci(n : int) : int =
+    let
+      var a := 0
+      var b := 1
+      var t := 0
+    in
+      (for j := 1 to n do
+        (t := a;
+        a := b;
+        b := t + b);
+      b)       
+    end
+in
+  for i := 1 to 8 do
+    (print_int(fibonacci(i)); print("\n"))
+end
